@@ -28,6 +28,9 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           command: [ "tail", "-f", "/dev/null" ]
+          envFrom:
+          - configMapRef:
+              name: {{ template "diaspora.fullname" . }}
           env:
             - name: POSTGRESQL_PASSWORD
               valueFrom:
