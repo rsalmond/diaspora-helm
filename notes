@@ -2,4 +2,4 @@ kl create cm configtest --from-file=database.yml=database.yml --from-file diaspo
 
 helm upgrade misty-chimp . --set postgresql.persistence.existingClaim=diaspora-postgres --set postgresql.postgresPassword=$(< /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c32)
 
-helm install . --set postgresql.persistence.existingClaim=diaspora-postgres --set postgresql.postgresPassword=$(< /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c32)
+helm install . --set postgresql.persistence.existingClaim=diaspora-postgres --set postgresql.postgresPassword=$(< /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c32) --set redis.redisPassword=$(< /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c32)
