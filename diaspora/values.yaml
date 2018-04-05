@@ -46,13 +46,14 @@ affinity: {}
 
 postgresql:
   postgresUser: diaspora
-  # specify this with --set at install time eg. 
-  # $ helm install diaspora --set postgresql.postgresPassword $(< /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c32)
+  # specify this with --set at install time (see readme)
   postgresPassword: <nil>
 
 redis:
   persistence:
     enabled: false
+  # specify this with --set at install time (see readme)
+  redisPassword: <nil>
 
 diaspora_environment:
   rails_env: production
